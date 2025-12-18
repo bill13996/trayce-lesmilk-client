@@ -146,7 +146,7 @@ function HomeContent() {
             {guest?.photoUrl ? (
               <img
                 id="guest-image"
-                src={guest?.photoUrl ? HOST_API_BASE_URL + guest.photoUrl : ""}
+                src={guest?.photoUrl || ""}
                 alt={guest?.name ?? "guest"}
                 className="relative z-5 mt-5 w-full max-w-xs mx-auto rounded-[24px] bg-[#2D2F2F] aspect-square object-cover object-center"
               />
