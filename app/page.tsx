@@ -1,7 +1,7 @@
 "use client";
 
 import type { FormEvent } from "react";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
 type Guest = {
@@ -14,9 +14,10 @@ type Guest = {
 };
 
 // TODO: Replace these with your real backend endpoints
-const HOST_API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:1337";
+const HOST_API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:1337";
 
-export default function Home() {
+function HomeContent() {
   const searchParams = useSearchParams();
   const guestId = searchParams.get("id");
 
@@ -278,5 +279,19 @@ export default function Home() {
         </section>
       </main>
     </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex items-center justify-center min-h-screen">
+          <p className="text-sm text-slate-700">Đang tải lời mời...</p>
+        </div>
+      }
+    >
+      <HomeContent />
+    </Suspense>
   );
 }
