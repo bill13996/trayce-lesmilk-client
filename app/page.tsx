@@ -165,12 +165,12 @@ function HomeContent() {
         <section id="rsvp" className="flex justify-center px-4 py-10 pb-14">
           {!guest?.attendance ? (
             <div className="w-full max-w-md">
-              <h2 className="text-center text-xl font-semibold text-[#1e2b2f] mb-6">
+              <h2 className="text-center text-2xl font-semibold text-[#1e2b2f] mb-6">
                 Bạn sẽ tham gia chứ?
               </h2>
 
               <form
-                className="space-y-5 text-sm text-[#1e2b2f]"
+                className="space-y-5 text-md text-[#1e2b2f]"
                 onSubmit={onFormSubmit}
               >
                 <div className="flex justify-center gap-3 sm:flex-row sm:items-center sm:justify-center">
@@ -197,7 +197,7 @@ function HomeContent() {
                 </div>
 
                 <div className="flex justify-center items-center gap-2 mt-1">
-                  <span className="text-sm mr-4">Bạn đi bao nhiêu người?</span>
+                  <span className="text-md mr-4">Bạn đi bao nhiêu người?</span>
                   <input
                     type="number"
                     min={0}
@@ -211,7 +211,7 @@ function HomeContent() {
                   <button
                     type="submit"
                   disabled={isSubmitting}
-                  className="w-56 rounded-full bg-[#1f1f1f] py-2 text-sm font-semibold tracking-wide text-white shadow-md active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-56 rounded-full bg-[#1f1f1f] py-2 text-md font-semibold tracking-wide text-white shadow-md active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
                   {isSubmitting ? (
                     <>
